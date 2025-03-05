@@ -15,10 +15,18 @@ def convert_unit(value, unit_from, unit_to):
     key = f"{unit_from}_{unit_to}" # Generate a unqiue key  based on the input and output unit
 
     if key in conversions:
-        conversions = conversions[key]
-        result = value * conversions
+        conversion_factor = conversions[key]  # Get the conversion factor
+        result = value * conversion_factor   # Perform conversion
     else:
-        result = "Not Supported"
+        result = "Conversion Not Supported"
+
+    return result  # Return the result
+
+    # if key in conversions:
+    #     conversions = conversions[key]
+    #     result = value * conversions
+    # else:
+    #     result = "Not Supported"
 
 st.title("Unit Converter by samad")
 
