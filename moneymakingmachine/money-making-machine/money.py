@@ -42,7 +42,7 @@ if st.button("Generate Hustle"):  # Creates a button that runs the following cod
 def fetch_money_quote():
     try:
         # Try to get quote from local server
-        response = requests.get("http://127.0.0.1:8000/money_quotes")  # Sends GET request to local API server
+        response = requests.get("http://127.0.0.1:8000/money_qoutes")  # Sends GET request to local API server
         if response.status_code == 200:  # Checks if the request was successful (status code 200)
             quotes = response.json()  # Converts response data to JSON format
             return quotes["money_quote"]  # Extracts and returns the "money_quote" field from the response
