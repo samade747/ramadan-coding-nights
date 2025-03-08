@@ -22,15 +22,13 @@ if st.button("Generate Money"):  # Creates a button, and runs the following code
 # Function to get side hustle ideas from a server
 def fetch_side_hustle():
     try:
-        # Try to get data from local server
-        response = requests.get("http://127.0.0.1:8000/side_hustles")  # Sends GET request to local API server
-        if response.status_code == 200:  # Checks if the request was successful (status code 200)
-            hustles = response.json()  # Converts response data to JSON format
-            return hustles["side_hustle"]  # Extracts and returns the "side_hustle" field from the response
-        else:
-            return "Freelancing"  # Returns a default hustle idea if the server fails to respond properly
-    except:
-        return "Something went wrong!"  # Returns an error message if request fails
+        response = requests.get("http://127.0.0.1:8000/side_hustles")
+        response.raise_for_status()  # Check if request was successful
+        data = response.json()
+        return data.get("side_hustle", "Freelancing")  # Use .get() to avoid errors
+    except requests.exceptions.RequestException:
+        return "Something went wrong!"  # Show this if request fails
+
 
 # Create a section for side hustle ideas
 st.subheader("Side Hustle Ideas")  # Adds a subheading for side hustle ideas
@@ -41,15 +39,12 @@ if st.button("Generate Hustle"):  # Creates a button that runs the following cod
 # Function to get money-related quotes from server
 def fetch_money_quote():
     try:
-        # Try to get quote from local server
-        response = requests.get("http://127.0.0.1:8000/money_qoutes")  # Sends GET request to local API server
-        if response.status_code == 200:  # Checks if the request was successful (status code 200)
-            quotes = response.json()  # Converts response data to JSON format
-            return quotes["money_quote"]  # Extracts and returns the "money_quote" field from the response
-        else:
-            return "Money is the root of all evil!"  # Returns a default quote if the server fails to respond properly
-    except:
-        return "Something went wrong!"  # Returns an error message if request fails
+        response = requests.get("http://127.0.0.1:8000/money_quotes")  # Fixed URL
+        response.raise_for_status()
+        data = response.json()
+        return data.get("money_quote", "No quote available.")
+    except requests.exceptions.RequestException:
+        return "Something went wrong!"
 
 # Create a section for motivation quotes
 st.subheader("Money-Making Motivation")  # Adds a subheading for motivation quotes
