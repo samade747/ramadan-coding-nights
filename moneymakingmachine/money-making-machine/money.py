@@ -28,7 +28,7 @@ def fetch_side_hustle():
         return data.get("side_hustle", "Freelancing")  # Extract the correct key
     except requests.exceptions.RequestException as e:
         print(f"Error fetching side hustle: {e}")  # Debugging output
-        return "Something went wrong!"
+        return "No quote available!"
 
 
 # Create a section for side hustle ideas
@@ -46,7 +46,7 @@ def fetch_money_quote():
         return data.get("money_quote", "No quote available.")
     except requests.exceptions.RequestException as e:
         print(f"Error fetching money quote: {e}")  # Debugging output
-        return "Something went wrong!"
+        return "No quote available!"
 
 # Create a section for motivation quotes
 st.subheader("Money-Making Motivation")  # Adds a subheading for motivation quotes
