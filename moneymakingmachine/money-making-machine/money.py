@@ -23,11 +23,12 @@ if st.button("Generate Money"):  # Creates a button, and runs the following code
 def fetch_side_hustle():
     try:
         response = requests.get("http://127.0.0.1:8000/side_hustles")
-        response.raise_for_status()  # Check if request was successful
+        response.raise_for_status()  # Raises error for bad responses
         data = response.json()
-        return data.get("side_hustle", "Freelancing")  # Use .get() to avoid errors
-    except requests.exceptions.RequestException:
-        return "Something went wrong!"  # Show this if request fails
+        return data.get("side_hustle", "Freelancing")  # Extract the correct key
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching side hustle: {e}")  # Debugging output
+        return "Something went wrong!"
 
 
 # Create a section for side hustle ideas
@@ -39,11 +40,12 @@ if st.button("Generate Hustle"):  # Creates a button that runs the following cod
 # Function to get money-related quotes from server
 def fetch_money_quote():
     try:
-        response = requests.get("http://127.0.0.1:8000/money_quotes")  # Fixed URL
+        response = requests.get("http://127.0.0.1:8000/money_quotes")  # Ensure correct endpoint name
         response.raise_for_status()
         data = response.json()
         return data.get("money_quote", "No quote available.")
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching money quote: {e}")  # Debugging output
         return "Something went wrong!"
 
 # Create a section for motivation quotes
