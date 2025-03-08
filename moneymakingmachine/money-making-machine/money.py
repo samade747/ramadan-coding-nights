@@ -22,7 +22,7 @@ if st.button("Generate Money"):  # Creates a button, and runs the following code
 # Function to get side hustle ideas from a server
 def fetch_side_hustle():
     try:
-        response = requests.get("http://127.0.0.1:8501/side_hustles")
+        response = requests.get("http://127.0.0.1:8000/side_hustles")
         response.raise_for_status()  # Raises error for bad responses
         data = response.json()
         return data.get("side_hustle", "Freelancing")  # Extract the correct key
@@ -40,7 +40,7 @@ if st.button("Generate Hustle"):  # Creates a button that runs the following cod
 # Function to get money-related quotes from server
 def fetch_money_quote():
     try:
-        response = requests.get("http://127.0.0.1:8501/money_quotes")  # Ensure correct endpoint name
+        response = requests.get("http://127.0.0.1:8000/money_quotes")  # Ensure correct endpoint name
         response.raise_for_status()
         data = response.json()
         return data.get("money_quote", "No quote available.")
