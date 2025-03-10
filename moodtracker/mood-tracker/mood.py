@@ -9,17 +9,26 @@ MOOD_FILE = "mood_log.csv"
 
 # Function to read mood data from the CSV file
 def load_mood_data():
-    if not os.path.exists(MOOD_FILE):
+    if not os.path.exists(MOOD_FILE) or os.stat(MOOD_FILE).st_size == 0:
         return pd.DataFrame(columns=["Date", "Mood"])
-    return pd.read_csv(MOOD_FILE)
+    
+    try:
+        data = pd.read_csv(MOOD_FILE)
+        if "Date" not in data.columns or "Mood" not in data.columns:
+            return pd.DataFrame(columns=["Date", "Mood"])
+        return data
+    except Exception as e:
+        st.error(f"Error loading mood data: {e}")
+        return pd.DataFrame(columns=["Date", "Mood"])
 
 # Function to add new mood entry to CSV file
 def save_mood_data(date, mood):
+    file_exists = os.path.exists(MOOD_FILE)
     with open(MOOD_FILE, "a", newline='') as file:
         writer = csv.writer(file)
+        if not file_exists:
+            writer.writerow(["Date", "Mood"])
         writer.writerow([date, mood])
-
-
 
 # Streamlit app title with styled markdown
 st.set_page_config(page_title="Mood Tracker", page_icon="😊", layout="wide")
@@ -34,7 +43,6 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### Select a Date")
     selected_date = st.date_input("Pick a date", datetime.date.today())
-
 
 # Mood selection options with emojis
 mood_options = {
@@ -62,8 +70,9 @@ if st.button("Log Mood"):
 data = load_mood_data()
 if not data.empty:
     st.subheader("📊 Mood Trends Over Time")
-    data["Date"] = pd.to_datetime(data["Date"])
-
+    data["Date"] = pd.to_datetime(data["Date"], errors='coerce')
+    data = data.dropna()
+    
     # Show data in a table
     st.dataframe(data.sort_values(by="Date", ascending=False), height=250)
     
