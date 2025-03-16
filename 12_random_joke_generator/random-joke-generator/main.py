@@ -7,7 +7,7 @@ def get_random_joke():
         response = requests.get("https://official-joke-api.appspot.com/random_joke")
         if response.status_code == 200:
             joke_data = response.json()
-            return f"{joke_data['setup']} \n\n {joke_data['punchline']}"
+            return f"{joke_data['setup']} \n\n  \n\n {joke_data['punchline']}"
         else:
             return "⚠️ Failed to fetch a joke. Please try again later."
     except:
@@ -35,7 +35,7 @@ def main():
             font-weight: bold;
             text-align: center;
             color: #FFF;
-            background: #444;
+            background: #58865;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
