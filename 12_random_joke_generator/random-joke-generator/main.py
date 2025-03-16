@@ -35,7 +35,7 @@ def main():
             font-weight: bold;
             text-align: center;
             color: #FFF;
-            background: #58865;
+            background: #FF0000;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
