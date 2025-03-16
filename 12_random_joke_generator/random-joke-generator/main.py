@@ -66,7 +66,7 @@ def main():
     st.markdown(
         """
         <div style='text-align:center; font-size:14px; color:white;'>
-            <p>🔗 Joke from <a href='https://official-joke-api.appspot.com/' target='_blank' style='color:#FF5733;'>Official Joke API</a></p>
+            <p>🔗 Joke from <a href='https://github.com/samade747/' target='_blank' style='color:#FF5733;'>Official Joke API</a></p>
             <p>💻 Built with ❤️ by <a href='https://github.com/samade747/' target='_blank' style='color:#FF5733;'>samad</a> using Streamlit</p>
         </div>
         """,
