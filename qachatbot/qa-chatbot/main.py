@@ -1,17 +1,27 @@
+import os
+import chainlit as cl
 import google.generativeai as genai
 from dotenv import load_dotenv
-import os
 
-
+# Load environment variables
 load_dotenv()
 
-genai.configure(api_key=os.getenv["GOOGLE_API_KEY"])
-                
-model = genai.GeneratorExit(model_name= "gemini-20,") # Load the model 
+gemini_api_key = os.environ["GEMINI_API_KEY"]
 
-response = model.generate_content_async("Hello, how are you?") # Generate content
+# Configure the API key
+genai.configure(api_key=gemini_api_key)
 
-print(response.text) # Print the response
+# Load the model
+model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
+# Get input from the user
+@cl.on_chat_start
+async def handle_chat_start():
+    await cl.Message(content="Hello! How can I assist you today?").send()
 
-print(response.text) # Print the response
+@cl.on_message
+async def handle_message(message: cl.Message):
+    user_input = message.content
+    response = model.generate_content(user_input)
+    response_text = response.text if response else "I'm sorry, I don't understand that."
+    await cl.Message(content=response_text).send()
