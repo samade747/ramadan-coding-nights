@@ -23,5 +23,5 @@ async def handle_chat_start():
 async def handle_message(message: cl.Message):
     user_input = message.content
     response = model.generate_content(user_input)
-    response_text = response.text if response else "I'm sorry, I don't understand that."
+    response_text = response.text if hasattr(response, 'text') else ""
     await cl.Message(content=response_text).send()
