@@ -23,9 +23,33 @@ agent = Agent(
     model=model,
 )
 
+agent1 = Agent(
+    name = "Teacher Agent",
+    instructuion = "You are a greeting agent. You will greet the user with a greeting message.",
+    model=model,
+)
+
+agent2 = Agent(
+    name = "History Agent",
+    instructuion = "You are a greeting agent. You will greet the user with a greeting message.",
+    model=model,
+)
+
+agent3 = Agent(
+    name = "Doctor Agent",
+    instructuion = "You are a greeting agent. You will greet the user with a greeting message.",
+    model=model,
+)
+
+agent4 = Agent(
+    name = "Food Agent",
+    instructuion = "You are a greeting agent. You will greet the user with a greeting message.",
+    model=model,
+)
+
 # Get user input from the terminal
 user_question = input("Please enter your question: ")
 
 
-result = Runner.run_sync(agnet, "hi there")
+result = Runner.run_sync(agent, user_question)
 print(result.final_output)
