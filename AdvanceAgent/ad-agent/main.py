@@ -28,7 +28,7 @@ def get_weather(city: str) -> str:
     Get the weather of a city
     """
 
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv('OPENWEATHERMAP_API_KEY')}"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv('5467d7f2b3c22b4978260ab420f70966')}"
 
     response = requests.get(url)
     data = response.json()
