@@ -46,9 +46,9 @@ agent = Agent(
 )
 
 
-user_question = input("Enter your question: ")
+# user_question = input("Enter your question: ")
 
-result = Runner.run.sync(agent, user_question)
+# result = Runner.run.sync(agent, user_question)
 
 
 
