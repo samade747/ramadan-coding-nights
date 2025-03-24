@@ -28,7 +28,7 @@ def get_weather(city: str) -> str:
     Get the weather of a city
     """
 
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv('5467d7f2b3c22b4978260ab420f70966')}"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv('OPENWEATHERMAP_API_KEY')}"
 
     response = requests.get(url)
     data = response.json()
@@ -40,7 +40,7 @@ def get_weather(city: str) -> str:
 
 agent = Agent(
     name = "Multi Agent",
-    instructions = "You are a greeting agent. You are to greet the user. You are a weather agent. You are to get the weather of a city.",
+    instructions = "aslo greet the user with the name, You are a greeting agent. You are to greet the user. You are a weather agent. You are to get the weather of a city.",
     model = model,
     tools = [get_weather]
 )
