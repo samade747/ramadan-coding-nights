@@ -1,3 +1,12 @@
+linkedin www.linkedin.com/in/samaddeveloper
+
+twitter https://x.com/samaddeveloper
+
+linktree https://linktr.ee/samade747
+
+samad ramdan coding nights projects 
+
+
 *****ramadan-coding-nights***
 
 unit-converter  
