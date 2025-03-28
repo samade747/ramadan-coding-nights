@@ -35,4 +35,10 @@ https://github.com/samade747/ramadan-coding-nights/tree/main/timezoneapp
 
    qa-chatbot  
 
-   https://github.com/samade747/ramadan-coding-nights/tree/main/qachatbot/qa-chatbot
+   https://github.com/samade747/ramadan-coding-nights/tree/main/qachatbot/qa-chatbot  
+
+
+   password-generator  
+   https://github.com/samade747/ramadan-coding-nights/tree/main/password-generator  
+
+   https://samad-password-generator.streamlit.app/
