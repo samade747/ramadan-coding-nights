@@ -41,4 +41,8 @@ https://github.com/samade747/ramadan-coding-nights/tree/main/timezoneapp
    password-generator  
    https://github.com/samade747/ramadan-coding-nights/tree/main/password-generator  
 
-   https://samad-password-generator.streamlit.app/
+   https://samad-password-generator.streamlit.app/  
+
+   moodtracker/mood-tracker  
+
+   https://samad-modetrackerapp.streamlit.app/
