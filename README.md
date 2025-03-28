@@ -47,4 +47,11 @@ https://github.com/samade747/ramadan-coding-nights/tree/main/timezoneapp
 
    https://samad-modetrackerapp.streamlit.app/  
 
-   https://github.com/samade747/ramadan-coding-nights/tree/main/moodtracker/mood-tracker
+   https://github.com/samade747/ramadan-coding-nights/tree/main/moodtracker/mood-tracker  
+
+
+   moneymakingmachine/money-making-machine  
+
+   https://github.com/samade747/ramadan-coding-nights/tree/main/moneymakingmachine/money-making-machine  
+
+   https://samad-money-making-machine.streamlit.app/
