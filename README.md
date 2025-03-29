@@ -89,5 +89,14 @@ https://github.com/samade747/ramadan-coding-nights/tree/main/timezoneapp
 
    10_simple_calculator/simple-calculator  
 
-https://github.com/samade747/ramadan-coding-nights/tree/main/10_simple_calculator/simple-calculator
+https://github.com/samade747/ramadan-coding-nights/tree/main/10_simple_calculator/simple-calculator  
+
+
+Personal Library Manager  
+
+https://samad-libararywapp.streamlit.app/  
+
+https://github.com/samade747/python-piaic-learning/blob/main/data/classprojects/personal_library_manage/libararywithstreamlit/libararywithstreamlit.py
+
+
 
