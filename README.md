@@ -1,3 +1,6 @@
+![Profile Views](https://komarev.com/ghpvc/?username=samade747&style=flat-square)
+
+
 linkedin www.linkedin.com/in/samaddeveloper
 
 twitter https://x.com/samaddeveloper
